@@ -1,0 +1,57 @@
+# =====================================
+# Go build artifacts
+# =====================================
+/bin/
+/dist/
+/build/
+/tmpfiles
+/tmpfiles.exe
+*.exe
+*.out
+*.o
+*.test
+
+# Go vendor
+/vendor/
+
+# Go workspace files
+go.work
+go.work.sum
+
+# =====================================
+# Environment Files
+# =====================================
+.env
+.env.local
+.env.*.local
+
+# =====================================
+# Temporary upload files
+# =====================================
+/tmp/*
+
+# Jangan hapus direktori, tapi kosongkan (biar tetap ada)
+!tmp/.gitkeep
+
+# =====================================
+# Logs
+# =====================================
+*.log
+logs/
+log/
+
+# =====================================
+# OS Files
+# =====================================
+.DS_Store
+Thumbs.db
+
+# =====================================
+# Node / Frontend (kalau nanti ditambah)
+# =====================================
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+pnpm-lock.yaml
+package-lock.json

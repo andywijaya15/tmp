@@ -1,0 +1,9 @@
+services:
+  tmp-files:
+    build: .
+    container_name: tmp-files
+    ports:
+      - "${PORT}:3003"
+    volumes:
+      - ./tmp:/app/tmp
+    restart: unless-stopped
