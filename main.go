@@ -81,7 +81,11 @@ func handleUpload(c *gin.Context) {
 	}
 
 	expiresAt := time.Now().Add(60 * time.Minute).Format("2006-01-02 15:04:05")
-	url := fmt.Sprintf("http://%s/tmp/%s", c.Request.Host, newName)
+	scheme := "https"
+	if c.Request.TLS == nil {
+		scheme = "http"
+	}
+	url := fmt.Sprintf("%s://%s/tmp/%s", scheme, c.Request.Host, newName)
 	isImage := ext == ".jpg" || ext == ".jpeg" || ext == ".png" || ext == ".gif"
 
 	c.JSON(http.StatusOK, gin.H{
