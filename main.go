@@ -38,6 +38,14 @@ func main() {
 	// Upload endpoint
 	r.POST("/upload", handleUpload)
 
+	// Health check endpoint
+	r.GET("/health", func(c *gin.Context) {
+		c.JSON(http.StatusOK, gin.H{
+			"status": "ok",
+			"time":   time.Now().Format(time.RFC3339),
+		})
+	})
+
 	// Cleanup goroutine
 	go cleanOldTmpFiles()
 
