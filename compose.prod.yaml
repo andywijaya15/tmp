@@ -8,8 +8,6 @@ services:
     ports:
       - "${PORT1}:3003"
     restart: unless-stopped
-    labels:
-      - "com.centurylinklabs.watchtower.enable=true"
   tmp-files-green:
     image: ghcr.io/andywijaya15/tmp-files:latest
     container_name: tmp-files-green
@@ -19,13 +17,3 @@ services:
     ports:
       - "${PORT2}:3003"
     restart: unless-stopped
-    labels:
-      - "com.centurylinklabs.watchtower.enable=true"
-
-  watchtower:
-    image: containrrr/watchtower:latest
-    container_name: watchtower-tmp-files
-    restart: unless-stopped
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    command: --interval 30 --cleanup
