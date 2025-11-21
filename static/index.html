@@ -89,6 +89,8 @@
                     `;
                     document.getElementById('result').innerHTML = html;
 
+                    document.getElementById('uploadForm').reset();
+
                     Swal.fire('Upload Successful', 'Your image has been uploaded!', 'success');
                 } else {
                     Swal.fire('Upload Failed', 'The server could not process your file.', 'error');
